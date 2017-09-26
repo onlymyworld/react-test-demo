@@ -1,0 +1,1 @@
+document.write('Hello world22222222222!')

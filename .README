@@ -1,1 +1,7 @@
-aaa
+##使用webpack构建react应用,并实现热更新
+
+### 
+
+	npm run dev  [启动开发环境]  127.0.0.1:8082 
+	npm run server [启动服务器]	 127.0.0.1
+
