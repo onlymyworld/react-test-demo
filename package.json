@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/onlymyworld/hotReplaceHtml.git"
+    "url": "https://github.com/onlymyworld/react-test-demo.git"
   },
   "keywords": [
     "react",
@@ -20,9 +20,9 @@
   "author": "yf",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/onlymyworld/hotReplaceHtml/issues"
+    "url": "https://github.com/onlymyworld/react-test-demo/issues"
   },
-  "homepage": "https://github.com/onlymyworld/hotReplaceHtml#readme",
+  "homepage": "https://github.com/onlymyworld/react-test-demo#readme",
   "devDependencies": {
     "babel-core": "^6.24.1",
     "babel-loader": "^7.0.0",

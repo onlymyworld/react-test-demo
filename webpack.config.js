@@ -9,7 +9,7 @@ const PATH = {
 
 const commonConfig = {
 	entry:{
-		app:['react-hot-loader/patch','./app/index.js']
+		app:[PATH.app+'/index.js']
 	},
 	output:{
 		path:PATH.bulid,

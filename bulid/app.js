@@ -9606,52 +9606,18 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactDom = __webpack_require__(98);
 
-var _reactDom2 = _interopRequireDefault(_reactDom);
-
 var _Layout = __webpack_require__(184);
 
 var _Layout2 = _interopRequireDefault(_Layout);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var app = document.getElementById('app'); /*import React from 'react'
-                                          import {render} from 'react-dom'
-                                          
-                                          var HelloWorld = React.createClass({
-                                              render: function () {
-                                                  return <div> Hello World </div>
-                                              }
-                                          });
-                                          
-                                          render(
-                                              <HelloWorld />,
-                                             document.getElementById('app')
-                                          );
-                                          */
+var app = document.getElementById('app');
+(0, _reactDom.render)(_react2.default.createElement(_Layout2.default, null), app);
 
-_reactDom2.default.render(_react2.default.createElement(_Layout2.default, null), app);
-
-/*import React from 'react';
-import ReactDOM from 'react-dom';
-import Layout from "./Layout";
-
-function run() {
-  ReactDOM.render(<Layout />, document.getElementById('helloworld'));
-}
-
-const loadedStates = ['complete', 'loaded', 'interactive'];
-
-if (loadedStates.includes(document.readyState) && document.body) {
-  run();
-} else {
-  window.addEventListener('DOMContentLoaded', run, false);
-}*/
-
-/*if (module.hot) {
+if (false) {
 	module.hot.accept();
-}*/
-
-// document.write('Hello World')
+}
 
 /***/ }),
 /* 83 */
@@ -22156,7 +22122,7 @@ var Layout = function (_React$Component) {
             return _react2.default.createElement(
                 "h1",
                 null,
-                "Wololo?"
+                "Hello1233 ssss?"
             );
         }
     }]);
