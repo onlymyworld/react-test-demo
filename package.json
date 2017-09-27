@@ -4,9 +4,9 @@
   "description": "hot module replace test demo",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --hot --inline --port 8082",
+    "dev": "webpack-dev-server --content-base --inline --hot --port 8082",
     "release": "webpack --config webpack.config.release.js",
-    "server":"node server.js"
+    "server": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -24,7 +24,14 @@
   },
   "homepage": "https://github.com/onlymyworld/hotReplaceHtml#readme",
   "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
     "html-webpack-plugin": "^2.30.1",
+    "react": "^15.6.2",
+    "react-dom": "^15.6.2",
+    "react-hot-loader": "^3.0.0-beta.7",
     "webpack": "^3.6.0",
     "webpack-dev-server": "^2.8.2"
   }

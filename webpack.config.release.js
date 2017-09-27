@@ -15,6 +15,16 @@ const commonConfig = {
 		path:PATH.bulid,
 		filename:'[name].js'
 	},
+	module: {
+        loaders:[
+            { test: /\.(js|jsx)$/,
+              include: __dirname,
+              exclude: /node_modules/,
+              loader: "babel-loader",
+              query:{"presets": ["react", "es2015"]}
+            }
+        ]
+    },
 	plugins:[
 		new HtmlWebpackPlugin({
 			title:'react-demo-test',

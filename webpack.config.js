@@ -9,17 +9,30 @@ const PATH = {
 
 const commonConfig = {
 	entry:{
-		app:PATH.app+'/index.js'
+		app:['react-hot-loader/patch','./app/index.js']
 	},
 	output:{
 		path:PATH.bulid,
 		filename:'[name].js'
 	},
+	module: {
+        loaders:[
+            { test: /\.(js|jsx)$/,
+              include: __dirname,
+              exclude: /node_modules/,
+              loader: "babel-loader",
+              query:{
+              	"presets": ["react", "es2015"],
+              	"plugins":["react-hot-loader/babel"]}
+            }
+        ]
+    },
 	plugins:[
 		new HtmlWebpackPlugin({
 			title:'react-demo-test'
 		})
-	]
+	],
+	devtool:'eval-source-map'
 }
 
 module.exports = commonConfig;
