@@ -1,0 +1,71 @@
+react生态系统
+	1, 路由
+		react的路由解决方案有多个,推荐使用react-router;
+		另外推荐使用react-router-redux和react-router搭配使用,可保持路由器与应用程序状态同步
+
+	react-router-redux和react-router的区别。
+		react-redux:把react的state 集成到redux的store上，让redux来管理react组件的状态。
+		react-router-redux：把react-router url的变化、参数等信息作为状态，交给redux的store管理，一般场景下直接使用react-router即可，因为url的这些状态比较独立，不一定非要交给redux来管理的。
+
+	2, 状态管理器
+		react只是UI层，对于如何管理应用的状态;facebook提出了flux架构，而基于这一架构，react生态陆续出现了react,reflux.js,mobx,react-redux等一系列状态管理框架
+
+		redux不仅应用于react,也可以应用于angular,vue等框架,只是redux和react配合使用最为契合
+
+	3, UI库
+		material-ui,react-toolbox,
+
+
+
+react-router [@3.0.5]
+	Router是一个组件,它其实只是一个容器,具体的路由是由Route来实现
+	import {Router,Route,hashHistory} from 'react-router'
+	<Router>
+		<Route path='/' component={App}></Route>
+	</Router> 
+	hashHistory值表示,路由的切换由URL的hash变化决定,即URL的#部分发生变化,
+
+
+	Main.js中的this.props.children属性就是子组件
+	子路由也可以不写在Router组件里面,单独传入Router组件的router属性
+
+	Link,
+	IndexLink - 连接到根目录
+	IndexRedirect 组件用于访问跟路由的时候,将用户重定向到某个子组件
+	Redirect组件 - 组件用于路由的跳转,即用户访问一个路由,会自动跳转到另一个路由
+	IndexRoute组件
+
+	<Route path='/' component={App}>
+		<Route path='/about' component={About}></Route>
+		<Route path='/layout' component={Layout}></Route>
+	</Route>
+
+	上面的代码，访问/路径时，不会加载任何子组件,也就是说App组件的this.props.childen,这时是undefined,
+	因此,通常会采用{this.props.children || <Home />} 这样的写法,Home是About和Layout的同级组件,却没有写在Route中
+	IndexRoute显示指定Hom是跟路由的子组件,即默认下加载的子组件
+
+
+	通配符
+	<Route path="/about" component={About} />      == /about
+	<Route path="/about/:id" component={About} />		== /about/12 || /about/we
+	<Route path="/about(/:name)" component={About} />   == /about || /about/aa
+	<Route path='/about/*.*' component={About} />   == /about/aa.html || /about/bb.jpg
+	<Route path="/about/*.jpg" component={About} />  == /about/aa.jpg
+	<Route path="/**/*" component={About} />   == /file/main  || /file/main/index
+
+
+
+Redux 设计思想
+	1,web应用是一个状态机,视图与状态是一一对应的。
+	2,所有的状态,保存在一个对象里
+	随着JavaScript单页应用开发日趋复杂,JavaScript需要管理比任何时候都要多的state(状态),
+	这些数据可能包括服务器响应,缓存数据,本地生成尚未持久化到服务器的数据,也包括UI状态,如激活的路由,
+	被选中的标签,是否显示加载动效或者分页器等等。
+
+	三大原则
+		1:单一数据源  store对象
+		2:state是只读的
+		3:使用纯函数来执行修改
+
+
+React-Redux [状态管理系统]
